@@ -7,3 +7,16 @@
   font-family: 'Fira Sans Condensed', sans-serif;
 }
 
+.appcontainer{
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-areas: "side body";
+}
+
+.sbrcontainer{
+  grid-area: side;
+}
+
+.rightContainer{
+  grid-area: body;
+}

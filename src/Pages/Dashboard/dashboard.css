@@ -1,0 +1,58 @@
+.main-container{
+    width: 100%;
+    height: 100vh;
+    background-color: #fff;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-areas: "Tleft Tright";
+}
+
+.left-container{
+    grid-area: Tleft;
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-areas: 
+    "TLtop"
+    "TLbottom";
+}
+
+.right-container{
+    grid-area: Tright;
+}
+
+.left-bottom-contain{
+    grid-area: TLbottom;
+    background-color: darkolivegreen;
+}
+
+.left-top-contain{
+    grid-area: TLtop;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-areas: "leftTop rightTop";
+}
+
+.LTC-left{
+    grid-area: leftTop;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: aqua;
+}
+
+.LTC-right{
+    grid-area: rightTop;
+    background-color: burlywood;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.LTC-right-content{
+    width: 400px;
+    height: 500px;
+    background-color: #2c0ca0;
+    border-radius: 30px;
+}

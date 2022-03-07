@@ -1,6 +1,9 @@
 
   .navigation {
     position: relative;
+    /* position: absolute; */
+    top: 0;
+    left: 0;
     height: 100vh;
     width: 70px;
     overflow: hidden;
@@ -13,6 +16,9 @@
   
   .navigation:hover{
     width: 250px;
+    /* position: absolute;
+    top: 0;
+    left: 0; */
   }
 
   .navigation-active {
