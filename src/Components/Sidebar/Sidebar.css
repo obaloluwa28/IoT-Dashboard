@@ -12,6 +12,8 @@
     border-left: 10px solid #2c0ca0;
     transition: width 0.5s;
     border-radius: 30px;
+    /* border-top-left-radius: 30px;
+    border-top-left-radius: 30px; */
   }
   
   .navigation:hover{
@@ -30,6 +32,8 @@
     border-left: 10px solid #2c0ca0;
     transition: width 0.5s;
     border-radius: 30px;
+    /* border-top-left-radius: 30px;
+    border-top-left-radius: 30px; */
   }
 
   .toggle-contain{
@@ -55,7 +59,7 @@
   
   ul li.active{
     /* background-color: #4187f6; */
-    background-color: #ffff;
+    background-color: rgb(252, 247, 247)
   }
   
   ul li a{
@@ -76,7 +80,7 @@
     height: 30px;
     background-color: #2c0ca0;
     border-radius: 50%;
-    box-shadow: 15px 15px 0 #ffff;
+    box-shadow: 15px 15px 0 rgb(252, 247, 247);
   }
   
   ul li.active a::after{
@@ -88,7 +92,7 @@
     height: 30px;
     background-color: #2c0ca0;
     border-radius: 50%;
-    box-shadow: 15px -15px 0 #ffff;
+    box-shadow: 15px -15px 0 rgb(252, 247, 247);
   }
   
   ul li a .icon{
