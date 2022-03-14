@@ -17,6 +17,28 @@
     background-repeat: no-repeat;
 }
 
+.c-left-reg {
+    width: calc(1000px - 500px);
+    height: 100%;
+    background-color: antiquewhite;
+    background: linear-gradient(rgba(54, 54, 54, 0.5), rgba(0, 0, 0, 0.8)),
+    url("../../assets/wood1.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.c-left-oth {
+    width: calc(1000px - 500px);
+    height: 100%;
+    background-color: antiquewhite;
+    background: linear-gradient(rgba(54, 54, 54, 0.5), rgba(0, 0, 0, 0.8)),
+    url("../../assets/wood2.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
 .signup-cont{
     width: 1000px;
     height: 70%;

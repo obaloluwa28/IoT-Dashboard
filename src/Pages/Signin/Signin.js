@@ -153,7 +153,8 @@ const Signin = () => {
   return (
     <div className="signup-contain">
     <div className="signup-cont">
-      <div className="c-left"></div>
+      {isSignUp === "1" ? <div className="c-left"></div> : isSignUp === "2" ?
+      <div className="c-left-reg"></div>: <div className="c-left-oth"></div>}
       {isSignUp === "1" ?
       <div className="c-right">
         <form className="form" onSubmit={handleSubmit}>
