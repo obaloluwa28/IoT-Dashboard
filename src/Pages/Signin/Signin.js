@@ -5,7 +5,7 @@ import Twitter from '../../assets/Twitter.png'
 import Linkedln from '../../assets/Linkedln.png'
 import Facebook from '../../assets/website.png'
 import { AiOutlineEyeInvisible, AiOutlineEye} from "react-icons/ai";
-// import axios from 'axios';
+import axios from 'axios';
 import Loading from '../../Components/Loading/Loading'
 import { useNavigate } from "react-router-dom";
 
@@ -73,23 +73,22 @@ const Signin = () => {
           Password: password
       }
       console.log(Sobj)
-      navigate ('/dashboard')
-      // axios.post(`http://localhost:5000/login`, Sobj).then((response) => {
-      //   // axios.post(`https://sterling-smart-meter-backend.herokuapp.com/login`, obj).then((response) => {
-      //     if(response.status === 200){
-      //         console.log(response.data.message);
-      //         if(response.data.message === "true"){
-      //         //   navigate ('/dashboard')
-      //         }
-      //         else{
-      //           console.log("Incorrect Username or Password")
-      //              setServeresp("error")
-      //         }
-      //       }
-      //     else{
-      //       console.log('error')
-      //     }
-      // });
+      axios.post(`http://localhost:5000/login`, Sobj).then((response) => {
+        // axios.post(`https://sterling-smart-meter-backend.herokuapp.com/login`, obj).then((response) => {
+          if(response.status === 200){
+              console.log(response.data.message);
+              if(response.data.message === "true"){
+                navigate ('/dashboard')
+              }
+              else{
+                console.log("Incorrect Username or Password")
+                   setServeresp("error")
+              }
+            }
+          else{
+            console.log('error')
+          }
+      });
     } else if(isSignUp === "2"){
       setNotloading(true)
       setLoadingstate("register")
@@ -150,6 +149,10 @@ const Signin = () => {
 
   }
 
+  const toggleErrorComp = () =>{
+    setNotloading(false)
+  } 
+
   return (
     <div className="signup-contain">
     <div className="signup-cont">
@@ -180,7 +183,7 @@ const Signin = () => {
 
             <input type="submit" className="inputButtn" text="Sign In" />
             <span>Don't have an account? <span onClick={ToggleSign} id="toggle">Signup Now!</span></span>
-            {notloading && <Loading loadingstatus={loadingstate} loadingresp={serveresp}/> }
+            {notloading && <Loading loadingstatus={loadingstate} loadingresp={serveresp} changeErrorDisp={toggleErrorComp}/> }
         </form>
       </div> : isSignUp === "2" ?
       <div className="c-right">

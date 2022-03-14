@@ -7,5 +7,19 @@
     background-color: rgba(0, 0, 0, 0.575);
     position: absolute;
     top: 0;
-    color: white
+    color: white;
+}
+
+.errormsg{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center
+}
+
+#errorIcon{
+    font-size: 50px;
+    color: red;
+    margin-bottom: 10px;
+    cursor: pointer
 }

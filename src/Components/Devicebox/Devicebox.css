@@ -4,5 +4,55 @@
     background-color: white;
     height: 100px;
     width: 130px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     box-shadow: 0 3px 10px rgba(141, 140, 140, 0.1);
+    position: relative;
+}
+
+#device-title{
+    position: static;
+    font-size: 13px;
+    /* font-weight: 500; */
+}
+
+.col1 ul.more-list{
+    padding: 2px 5px;
+    width: fit-content;
+    background-color: white;
+    list-style-type: none;
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.2);
+}
+
+.col1 ul.more-list-2{
+    display: none
+}
+
+.col1 .more-list li{
+    font-size: 12px;
+    /* background-color: rgb(255, 255, 255); */
+    cursor: pointer;
+    border-radius: 0px;
+}
+
+.col1 .more-list li:hover{
+    color: white;
+    background-color: #888;
+}
+
+#more-Icon{
+    color: #888;
+    position: absolute;
+    top: 10px;
+    right: 5px;
+    cursor:pointer;
+}
+
+.sub-box-contain{
+    width: 100%;
+    height: 100%;
 }

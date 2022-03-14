@@ -1,0 +1,25 @@
+.toggle-main-container{
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.toggle-main-container > div{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+div > #on-icon{
+    font-size: 35px;
+    color: green;
+    cursor:pointer
+}
+
+div > #off-icon{
+    font-size: 35px;
+    color: gray;
+    cursor:pointer;
+    transform: rotate(180deg);
+}
