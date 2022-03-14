@@ -6,12 +6,14 @@
     display: grid;
     grid-template-columns: auto auto;
     grid-template-areas: "Tleft Tright";
+    overflow-y: auto;
 }
 
 .left-container{
     grid-area: Tleft;
     display: grid;
     grid-template-rows: auto auto;
+    row-gap: 10px;
     grid-template-areas: 
     "TLtop"
     "TLbottom";
@@ -53,13 +55,23 @@
 }
 
 #batt1{
+    position: relative;
     border-radius: 10px;
     height: 85px;
     width: 70px;
     background-color: white;
     margin-bottom: 5px;
-    border: 1px solid #8888
+    border: 1px solid #8888;
+    overflow: hidden;
+}
 
+.batt1-lvl{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .left-top-contain{
@@ -72,10 +84,19 @@
 }
 
 .LTC-left{
+    position: relative;
     grid-area: leftTop;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 15px 0px;
+}
+
+.LTC-left span{
+    margin-bottom: 10px;
+    position: fixed;
+    top: 30px;
 }
 
 .LTC-right{
@@ -83,26 +104,20 @@
     padding: 10px;
     display: flex;
     justify-content: center;
-    align-items: center;
+    /* align-items: center; */
+    position: relative;
 }
 
 .LTC-left-content{
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: auto auto auto;
     column-gap: 20px;
     row-gap: 20px;
 }
 
-#col1{
-    padding: 15px;
-    border-radius: 20px;
-    background-color: white;
-    height: 100px;
-    width: 130px;
-    box-shadow: 0 3px 10px rgba(141, 140, 140, 0.1);
-}
-
 .LTC-right-content{
+    position: sticky;
+    top: 50px;
     width: 400px;
     height: 500px;
     background-color: #2c0ca0;

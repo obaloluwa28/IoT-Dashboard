@@ -1,0 +1,8 @@
+.col1{
+    padding: 15px;
+    border-radius: 20px;
+    background-color: white;
+    height: 100px;
+    width: 130px;
+    box-shadow: 0 3px 10px rgba(141, 140, 140, 0.1);
+}

@@ -1,0 +1,33 @@
+#batt{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#batt span{
+    font-size: 13px;
+}
+
+#batt1{
+    position: relative;
+    border-radius: 10px;
+    height: 85px;
+    width: 70px;
+    background-color: white;
+    margin-bottom: 5px;
+    border: 1px solid #8888;
+    overflow: hidden;
+}
+
+.batt1-lvl{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.batt1-lvl span{
+    color: white
+}

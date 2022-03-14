@@ -90,14 +90,14 @@ const Sidebar = () => {
             </div>
             <ul>
               <li className={link1 ? "list active" : "list"}>
-                <a href="#" onClick={handleOnClick} name="list1">
+                <a href="/dashboard" onClick={handleOnClick} name="list1">
                   <span className="icon"><AiOutlineDashboard id='icoons'/></span>
                   <span className="title">Dashboard</span>
                 </a>
               </li>
   
               <li name="list2" className={link2 ? "list active" : "list"} onClick={handleOnClick}>
-                <a href="#" onClick={handleOnClick} name="list2">
+                <a href="/dashboard/device" onClick={handleOnClick} name="list2">
                   <span className="icon"><ion-icon name="desktop-outline"></ion-icon></span>
                   <span className="title">Devices</span>
                 </a>
@@ -111,7 +111,7 @@ const Sidebar = () => {
               </li>
 
               <li className={link5 ? "list active" : "list"} onClick={handleOnClick}>
-                <a href="#" onClick={handleOnClick} name="list5">
+                <a href="/dashboard/statistics" onClick={handleOnClick} name="list5">
                   <span className="icon"><ion-icon name="stats-chart-outline"></ion-icon></span>
                   <span className="title">Statistics</span>
                 </a>
@@ -125,7 +125,7 @@ const Sidebar = () => {
               </li>
   
               <li className={link7 ? "list active" : "list"} onClick={handleOnClick}>
-                <a href="#" onClick={handleOnClick} name="list7">
+                <a href="/" onClick={handleOnClick} name="list7">
                   <span className="icon"><ion-icon name="log-out-outline"></ion-icon></span>
                   <span className="title">Sign Out</span>
                 </a>
