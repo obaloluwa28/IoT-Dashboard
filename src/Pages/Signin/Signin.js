@@ -162,13 +162,13 @@ const Signin = () => {
       <div className="c-right">
         <form className="form" onSubmit={handleSubmit}>
             <span>Smart Homes!</span>
-            <span>If it uses Power, it can be Controlled! </span>
-            <div className="social-icons">
+            <span className='motto'>If it uses Power, it can be Controlled! </span>
+            {/* <div className="social-icons">
                 <span id="img-box"><img src={Google} alt="website url"/></span>
                 <span id="img-box"><img src={Twitter} alt="twitter url"/></span>
                 <span id="img-box"><img src={Linkedln} alt="linkedlne url"/></span>
                 <span id="img-box"><img src={Facebook} alt="facebook url"/></span>
-            </div>
+            </div> */}
             <div className="horizontal-rule"><hr id="rule" /><span>or</span><hr id="rule" /></div>
             <div className="label-container">
                 <span>Your Email</span>

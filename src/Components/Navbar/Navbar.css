@@ -1,0 +1,34 @@
+.navbar-container{
+    width: 100%;
+    height: 50px;
+    /* background-color: aqua; */
+    box-shadow: 0 3px 10px rgba(141, 140, 140, 0.1);
+    padding: 5px 20px 5px 50px;
+}
+
+.search-container{
+    width: 45%;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+#search-icon{
+    position: absolute;
+    right: 20px;
+    color: #888;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.dash-search{
+    width: 100%;
+    height: 40px;
+    background-color: white;
+    outline: none;
+    border: none;
+    padding: 3px 20px 5px 30px;
+    color: #888;
+    font-size: 16px;
+    border-radius: 20px;
+}

@@ -3,6 +3,7 @@ import './dashboard.css'
 import BarChart from '../../Components/Barchart/BarChart'
 import Devicebox from '../../Components/Devicebox/Devicebox'
 import Deviceboxperc from '../../Components/DeviceboxPerc/Deviceboxperc'
+import Navbar from '../../Components/Navbar/Navbar'
 
 const Dashboard = ({setsiginState}) => {
     const [selectedval, setSelectedval] = useState('toggle')
@@ -13,6 +14,7 @@ const Dashboard = ({setsiginState}) => {
     <div className="main-container">
         <div className="left-container">
             <div className="left-top-contain">
+                <div className="nav-nav-cont"><Navbar /></div>
                 <div className="LTC-left">
                     <span>My Devices</span>
                     <div className="LTC-left-content">    

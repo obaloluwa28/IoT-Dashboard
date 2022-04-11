@@ -13,7 +13,7 @@
     grid-area: Tleft;
     display: grid;
     grid-template-rows: auto auto;
-    row-gap: 10px;
+    row-gap: 5px;
     grid-template-areas: 
     "TLtop"
     "TLbottom";
@@ -92,10 +92,18 @@
 .left-top-contain{
     grid-area: TLtop;
     display: grid;
+    grid-template-rows: auto auto;
     grid-template-columns: auto auto;
-    grid-template-areas: "leftTop rightTop";
+    grid-template-areas: 
+    "navbar navbar"
+    "leftTop rightTop";
     border-radius: 20px;
     box-shadow: 0 3px 10px rgba(141, 140, 140, 0.1)
+}
+
+.nav-nav-cont{
+    grid-area: navbar;
+    width: 100%
 }
 
 .LTC-left{
@@ -111,7 +119,7 @@
 .LTC-left > span{
     margin-bottom: 10px;
     position: fixed;
-    top: 30px;
+    top: 60px;
     font-size: 18px;
     font-weight: 600;
 }
