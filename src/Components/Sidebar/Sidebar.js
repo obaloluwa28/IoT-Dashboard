@@ -2,6 +2,8 @@ import React, {useState} from 'react'
 import './Sidebar.css'
 import { AiOutlineDashboard } from "react-icons/ai";
 import Togglemenu from '../Togglemenu/Togglemenu';
+import { Link } from 'react-router-dom';
+
 const Sidebar = () => {
     const [link1, setLink1] = useState(true)
     const [link2, setLink2] = useState(false)
@@ -89,46 +91,46 @@ const Sidebar = () => {
                 <Togglemenu />
             </div>
             <ul>
-              <li className={link1 ? "list active" : "list"}>
-                <a href="/dashboard" onClick={handleOnClick} name="list1">
+              <li className={link1 ? "list active" : "list" } name="list1" onClick={handleOnClick}>
+                <Link to="/dashboard" className='a' onClick={handleOnClick} name="list1">
                   <span className="icon"><AiOutlineDashboard id='icoons'/></span>
                   <span className="title">Dashboard</span>
-                </a>
+                </Link>
               </li>
   
               <li name="list2" className={link2 ? "list active" : "list"} onClick={handleOnClick}>
-                <a href="/dashboard/device" onClick={handleOnClick} name="list2">
+                <Link to="/dashboard/device" className='a' onClick={handleOnClick} name="list2">
                   <span className="icon"><ion-icon name="desktop-outline"></ion-icon></span>
                   <span className="title">Devices</span>
-                </a>
+                </Link>
               </li>
   
-              <li className={link3 ? "list active" : "list"} onClick={handleOnClick}>
-                <a href="#" onClick={handleOnClick} name="list3">
+              <li className={link3 ? "list active" : "list"} name="list3" onClick={handleOnClick}>
+                <Link to="/dashboard/device" className='a' onClick={handleOnClick} name="list3">
                   <span className="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
                   <span className="title">Security</span>
-                </a>
+                </Link>
               </li>
 
               <li className={link5 ? "list active" : "list"} onClick={handleOnClick}>
-                <a href="/dashboard/statistics" onClick={handleOnClick} name="list5">
+                <Link to="/dashboard/statistics" className='a' onClick={handleOnClick} name="list5">
                   <span className="icon"><ion-icon name="stats-chart-outline"></ion-icon></span>
                   <span className="title">Statistics</span>
-                </a>
+                </Link>
               </li>
   
               <li className={link4 ? "list active" : "list"} onClick={handleOnClick}>
-                <a href="#" onClick={handleOnClick} name="list4">
+                <Link to="/dashboard/statistics" className='a' onClick={handleOnClick} name="list4">
                   <span className="icon"><ion-icon name="settings-outline"></ion-icon></span>
                   <span className="title">Settings</span>
-                </a>
+                </Link>
               </li>
   
               <li className={link7 ? "list active" : "list"} onClick={handleOnClick}>
-                <a href="/" onClick={handleOnClick} name="list7">
+                <Link to="/dashboard/statistics" className='a' onClick={handleOnClick} name="list7">
                   <span className="icon"><ion-icon name="log-out-outline"></ion-icon></span>
                   <span className="title">Sign Out</span>
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

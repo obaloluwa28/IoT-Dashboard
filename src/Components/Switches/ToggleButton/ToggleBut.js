@@ -1,10 +1,17 @@
-import React,{useState} from 'react'
+import React,{useState, useEffect} from 'react'
 import TogglebutOff from '../ToggleButtonOff/TogglebutOff'
 import TogglebutOn from '../ToggleButtonOn/TogglebutOn'
 import '../Togglebut.css'
 
-const Togglebut = () => {
-  const [toggleSwitch, setToggleSwitch] = useState(false)
+const Togglebut = ({valState}) => {
+  console.log(`Button State: ${valState}`)
+  let received_state;
+  const [toggleSwitch, setToggleSwitch] = useState()
+
+  useEffect(() =>{
+    setToggleSwitch(valState === "on" ? true : false )
+  }, [])
+
   const handleTogSwitch = () =>{
     setToggleSwitch(!toggleSwitch)
   }

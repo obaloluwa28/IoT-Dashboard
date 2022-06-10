@@ -62,7 +62,7 @@
     background-color: rgb(252, 247, 247)
   }
   
-  ul li a{
+  ul li .a{
     position: relative;
     display: block;
     width: 100%;
@@ -71,7 +71,7 @@
     color: #fff;
   }
   
-  ul li.active a::before{
+  ul li.active .a::before{
     content: '';
     position: absolute;
     top: -30px;
@@ -83,7 +83,7 @@
     box-shadow: 15px 15px 0 rgb(252, 247, 247);
   }
   
-  ul li.active a::after{
+  ul li.active .a::after{
     content: '';
     position: absolute;
     bottom: -30px;
@@ -95,7 +95,7 @@
     box-shadow: 15px -15px 0 rgb(252, 247, 247);
   }
   
-  ul li a .icon{
+  ul li .a .icon{
     position: relative;
     display: block;
     min-width: 60px;
@@ -104,19 +104,19 @@
     text-align: center;
   }
   
-  ul li a .icon ion-icon{
+  ul li .a .icon ion-icon{
     position: relative;
     font-size: 1.5em;
     z-index: 1;
   }
 
-  ul li a .icon #icoons{
+  ul li .a .icon #icoons{
     position: relative;
     font-size: 1.5em;
     z-index: 1;
   }
   
-  ul li a .title{
+  ul li .a .title{
     position: relative;
     display: block;
     padding-left: 10px;
@@ -125,14 +125,14 @@
     white-space: nowrap;
   }
 
-  ul li.active a .icon ion-icon{
+  ul li.active .a .icon ion-icon{
     color: #f00;
   }
 
- ul li.active a .icon #icoons{
+ ul li.active .a .icon #icoons{
     color: #f00;
   }
 
- ul li.active a .title{
+ ul li.active .a .title{
     color: #2c0ca0;
   }

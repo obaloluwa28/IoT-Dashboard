@@ -118,9 +118,9 @@
 
 .LTC-left > span{
     margin-bottom: 10px;
-    position: fixed;
-    top: 60px;
-    font-size: 18px;
+    position: absolute;
+    top: 30px;
+    font-size: 18px;  
     font-weight: 600;
 }
 
