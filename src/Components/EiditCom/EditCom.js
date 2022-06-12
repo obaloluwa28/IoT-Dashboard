@@ -12,7 +12,7 @@ const EditCom = ({closeOverlay}) => {
     <div className='editcom-container'>
         <div className='nameChangeCont'>
             <IoCloseCircle id='closeIcons' onClick={changeState} />
-            <p id="tagTitle">Change Title</p>
+            <p id="tagTitle">Change Device Name</p>
             <input type="text" placeholder="Enter New Title" className='inputfield' />
             <button className='change-but'>Change</button>
         </div>

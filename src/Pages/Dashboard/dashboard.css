@@ -44,6 +44,7 @@
     box-shadow: 0 3px 10px rgba(141, 140, 140, 0.1);
     border-radius: 20px;
     padding: 10px;
+    width: 85%;
 }
 
 .left-bottom-contain > span{
@@ -98,7 +99,8 @@
     "navbar navbar"
     "leftTop rightTop";
     border-radius: 20px;
-    box-shadow: 0 3px 10px rgba(141, 140, 140, 0.1)
+    box-shadow: 0 3px 10px rgba(141, 140, 140, 0.1);
+    width: 85%;
 }
 
 .nav-nav-cont{
@@ -126,7 +128,7 @@
 
 .LTC-right{
     grid-area: rightTop;
-    padding: 10px;
+    padding: 10px 0px;
     display: flex;
     justify-content: center;
     /* align-items: center; */

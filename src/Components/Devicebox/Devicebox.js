@@ -4,8 +4,10 @@ import { FiMoreVertical } from "react-icons/fi";
 import Togglebut from '../Switches/ToggleButton/ToggleBut';
 import EditCom from '../EiditCom/EditCom';
 
-const Devicebox = ({title, swtype, newState, butnState}) => {
+const Devicebox = ({title, swtype, newState, butnState, itemkey, clickedbutton}) => {
+  console.log(`key value: ${itemkey}`)
   console.log(`Obalo: ${butnState}`)
+
   const [more, setMore] = useState(false)
   const [incomingSwitch, setIncomingSwitch] = useState("")
   const [editover, setEditover] = useState(false)
@@ -31,6 +33,11 @@ const Devicebox = ({title, swtype, newState, butnState}) => {
     newState(setEditover(!editover))
   }
 
+  const handleToggle = (toggledState) =>{
+    console.log(`clicked ${JSON.stringify(toggledState)}`)
+    clickedbutton(toggledState)
+  }
+
   return (
       <div className="col1" onClick={Reset}>
         <FiMoreVertical id="more-Icon" onClick={() => {setMore(!more)}}/>
@@ -40,7 +47,7 @@ const Devicebox = ({title, swtype, newState, butnState}) => {
         </ul>
         <span id="device-title">{title}</span>
         <div className="sub-box-contain">
-          { incomingSwitch === "toggle" ?  switches.toggle : incomingSwitch === "push" ? switches.pushBut : switches.dimmer }
+          { incomingSwitch === "toggle" ?  <Togglebut valState={butnState} itemkey={itemkey} changeState={handleToggle}/> : incomingSwitch === "push" ? switches.pushBut : switches.dimmer }
         </div>
       </div>
   )

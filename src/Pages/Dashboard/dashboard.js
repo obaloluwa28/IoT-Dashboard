@@ -8,7 +8,7 @@ import EditCom from '../../Components/EiditCom/EditCom'
 import axios from 'axios'
 
 const Dashboard = ({setsiginState}) => {
-    const [selectedval, setSelectedval] = useState('toggle')
+    const [selectedval, setSelectedval] = useState("toggle")
     const [editover, setEditover] = useState(false)
     const [devicevals, setDevicevals] = useState([])
 
@@ -27,6 +27,19 @@ const Dashboard = ({setsiginState}) => {
         setEditover(!editover)
     }
 
+    const handleclickedbutton = (eventstate) =>{
+        console.log(`Obastate: ${eventstate.keypair}`)
+        axios.post(`http://localhost:5000/updatedata`, eventstate).then((response) => {
+            console.log(`Status response: ${response.data}`)
+            if(response.data === 201){
+                window.location.reload(true)
+            }
+            else{
+              console.log('I am error')
+            }
+        })
+    }
+
     return(
         <div className="main-container">
             <div className="left-container">
@@ -35,14 +48,8 @@ const Dashboard = ({setsiginState}) => {
                     <div className="LTC-left">
                         <span>My Devices</span>
                         <div className="LTC-left-content">    
-                            <Devicebox title="Enterance Light" swtype={selectedval} newState={togglestate} />
-                            <Devicebox title="AC" swtype={selectedval} newState={togglestate}/>
-                            <Devicebox title="Heater" swtype={selectedval} newState={togglestate}/>
-                            <Devicebox title="Gate" swtype={selectedval} newState={togglestate}/>
-                            <Devicebox title="Enterance Door" swtype={selectedval} newState={togglestate}/>
-                            <Devicebox title="Smart TV" swtype={selectedval} newState={togglestate}/>
                             {devicevals.map((iteem) => (
-                                <Devicebox title={iteem.title} swtype={selectedval} butnState={iteem.currState} newState={togglestate}/>
+                                <Devicebox title={iteem.title} swtype={selectedval} butnState={iteem.currState} newState={togglestate} itemkey={iteem.id} clickedbutton={handleclickedbutton} key={iteem.id}/>
                             ))}
                         </div>
                     </div>
