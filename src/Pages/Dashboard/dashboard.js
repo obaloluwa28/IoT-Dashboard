@@ -18,10 +18,11 @@ const Dashboard = ({setsiginState}) => {
     useEffect(() => {
         setsiginState()
         fetchData()
-    })
+    }, [])
 
     const fetchData = async () =>{
-        let response = await axios.get('http://localhost:5000/fetchdata')
+        // let response = await axios.get('http://localhost:5000/fetchdata')
+        let response = await axios.get('https://iot-home-automate-backend.herokuapp.com/fetchdata')
         console.log(response.data)
         setDevicevals(response.data)
     }
@@ -32,7 +33,7 @@ const Dashboard = ({setsiginState}) => {
 
     const handleclickedbutton = (eventstate) =>{
         console.log(`Obastate: ${eventstate.keypair}`)
-        axios.post(`http://localhost:5000/updatedata`, eventstate).then((response) => {
+        axios.post(`https://iot-home-automate-backend.herokuapp.com/updatedata`, eventstate).then((response) => {
             console.log(`Status response: ${response.data}`)
             if(response.data === 201){
                 window.location.reload(true)
