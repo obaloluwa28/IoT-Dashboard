@@ -219,6 +219,12 @@
   }
 }
 
+.motto {
+  font-size: 17px;
+  font-weight: 500;
+  /* margin-top: 20px; */
+}
+
 @media screen and (max-height: 600px) {
   .motto {
     display: none;

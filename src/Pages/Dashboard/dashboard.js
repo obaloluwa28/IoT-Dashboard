@@ -6,16 +6,19 @@ import Deviceboxperc from '../../Components/DeviceboxPerc/Deviceboxperc'
 import Navbar from '../../Components/Navbar/Navbar'
 import EditCom from '../../Components/EiditCom/EditCom'
 import axios from 'axios'
+import {IoIosNotificationsOutline } from "react-icons/io";
+import {IoChatboxEllipsesOutline } from "react-icons/io5";
+import Meterbox from '../../Components/Meterbox/Meterbox'
 
 const Dashboard = ({setsiginState}) => {
-    const [selectedval, setSelectedval] = useState("toggle")
+    const [selectedval] = useState("toggle")
     const [editover, setEditover] = useState(false)
     const [devicevals, setDevicevals] = useState([])
 
     useEffect(() => {
         setsiginState()
         fetchData()
-    }, [])
+    })
 
     const fetchData = async () =>{
         let response = await axios.get('http://localhost:5000/fetchdata')
@@ -42,7 +45,7 @@ const Dashboard = ({setsiginState}) => {
 
     return(
         <div className="main-container">
-            <div className="left-container">
+            <div className="dleft-container">
                 <div className="left-top-contain">
                     <div className="nav-nav-cont"><Navbar /></div>
                     <div className="LTC-left">
@@ -75,7 +78,24 @@ const Dashboard = ({setsiginState}) => {
                     </div>
                 </div>
             </div>
-            <div className="right-container">
+            <div className="dright-container">
+                <div className='drcont-dp'>
+                    <div className='drcont-dp-container'>
+                        <span><IoChatboxEllipsesOutline id='dash-icon'/></span>
+                        <div id='drcont-dp-container-img'/>
+                        <span><IoIosNotificationsOutline id='dash-icon'/></span>
+                    </div>
+                    <span id='profile-name'>Welcome Jane</span>
+                </div>
+
+                <div className='drcont-body'>
+                    <span id='meter-heading'>Monthly Meter Consumption</span>
+                    <div className='drcont-meter-cont'>
+                        <Meterbox title="Smart Energy Meter" values={"321.45KWh"}/>
+                        <Meterbox title="Smart Water Meter" values={"321.4㎥"}/>
+                        <Meterbox title="Smart Gas Meter" values={"321.4㎥"}/>
+                    </div>
+                </div>
             </div>
             {editover && <div><EditCom closeOverlay={togglestate}/></div> }
         </div>

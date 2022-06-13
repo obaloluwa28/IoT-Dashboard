@@ -19,7 +19,7 @@ const App = () => {
         </div>}
         <div className="rightContainer">
           <Routes>
-            <Route exact path="/" element={<Signin />} /> 
+            <Route exact path="/" element={<Signin setsiginState={() => {setSigninState(false)}}/>} /> 
             <Route path="/dashboard" element={<Dashboard setsiginState={() => {setSigninState(true)}}/>} />
             <Route path="/dashboard/device" element={<Device setsiginState={() => {setSigninState(true)}}/>} />
             <Route path="/dashboard/statistics" element={<Statistics setsiginState={() => {setSigninState(true)}}/>} />            

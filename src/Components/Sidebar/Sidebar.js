@@ -127,7 +127,7 @@ const Sidebar = () => {
               </li>
   
               <li className={link7 ? "list active" : "list"} onClick={handleOnClick}>
-                <Link to="/dashboard/statistics" className='a' onClick={handleOnClick} name="list7">
+                <Link to="/" className='a' onClick={handleOnClick} name="list7">
                   <span className="icon"><ion-icon name="log-out-outline"></ion-icon></span>
                   <span className="title">Sign Out</span>
                 </Link>

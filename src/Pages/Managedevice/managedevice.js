@@ -7,7 +7,7 @@ const Device = ({setsiginState}) => {
 })
   return (
     <div className="devicepg-contain">
-        Device Manager Page
+        <span id='pagetext'>This Page Is Currently Not Available!</span>
     </div>
   )
 }

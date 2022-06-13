@@ -1,15 +1,11 @@
-import React,{useState} from 'react'
+import React,{useState, useEffect} from 'react'
 import './signin.css'
-import Google from '../../assets/Google.png'
-import Twitter from '../../assets/Twitter.png'
-import Linkedln from '../../assets/Linkedln.png'
-import Facebook from '../../assets/website.png'
 import { AiOutlineEyeInvisible, AiOutlineEye} from "react-icons/ai";
 import axios from 'axios';
 import Loading from '../../Components/Loading/Loading'
 import { useNavigate } from "react-router-dom";
 
-const Signin = () => {
+const Signin = ({setsiginState}) => {
   const [isSignUp, setIsSignUp] = useState("1")
   const [firstname, setFirstname] = useState("")
   const [username, setUsername] = useState("")
@@ -21,6 +17,10 @@ const Signin = () => {
   const [notloading, setNotloading] = useState(false)
   const [loadingstate, setLoadingstate] = useState("")
   const [serveresp, setServeresp] = useState("")
+
+  useEffect(() => {
+    setsiginState()
+})
 
   const ToggleSign = () =>{
     setIsSignUp("2")
