@@ -64,7 +64,7 @@ const Dashboard = ({setsiginState}) => {
                     </div>
                 </div>
                 <div className="left-bottom-contain">
-                    <span>Systems Information</span>
+                    <span>Systems Informatio</span>
                     <div className="left-bottom-contain-inner">
                         <Deviceboxperc high='60%' background='palevioletred' title='AC' subtitle='60°C'/>
                         <Deviceboxperc high='73%' background='lightgreen' title='Router' subtitle='73°C'/>
