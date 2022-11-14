@@ -1,6 +1,6 @@
 .main-container{
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     background-color: rgb(252, 247, 247);
     display: grid;
     grid-template-columns: 77% 23%;
@@ -41,7 +41,7 @@
     flex-direction: column;
     /* border: 1px solid #888; */
     box-shadow: 0 3px 10px rgba(141, 140, 140, 0.1);
-    border-radius: 20px;
+    /* border-radius: 20px; */
     padding: 10px;
     width: 100%;
 }
@@ -97,9 +97,27 @@
     grid-template-areas: 
     "navbar navbar"
     "leftTop rightTop";
-    border-radius: 20px;
+    /* border-radius: 20px; */
     box-shadow: 0 3px 10px rgba(141, 140, 140, 0.1);
     width: 100%;
+}
+
+@media screen and (max-width:900px) {
+    .left-top-contain{
+        grid-template-rows: auto auto auto;
+        grid-template-columns: auto;
+        grid-template-areas: 
+        "navbar"
+        "leftTop"
+        "rightTop";
+    }
+
+    .left-bottom-contain-inner{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
 }
 
 .nav-nav-cont{
@@ -139,6 +157,8 @@
     grid-template-columns: auto auto auto;
     column-gap: 20px;
     row-gap: 20px;
+    min-height: 350px;
+    /* background-color: aqua; */
 }
 
 .LTC-right-content{
@@ -173,8 +193,8 @@
 }
 
 #drcont-dp-container-img{
-    height: 100%;
-    width: 130px;
+    height: 80%;
+    width: 100px;
     border-radius: 50%;
     background-color: rgba(0, 0, 0, 0.555);
     background: url("../../assets/jes.jpg"); 
@@ -186,6 +206,12 @@
 #profile-name{
     font-size: 18px;
     font-weight: 600;
+}
+
+#profile-id{
+    font-size: 13px;
+    font-weight: 500;
+    color: brown;
 }
 
 #dash-icon{
@@ -215,4 +241,46 @@
     display: flex;
     flex-direction: column;
     margin-top: 20px;
+}
+
+@media screen and (max-width: 1200px) {
+    .main-container{
+        grid-template-columns: 100%;
+        grid-template-rows: auto auto;
+        grid-template-areas: 
+        "Tleft"
+        "Tbottom";
+    }
+    
+    .dright-container{
+        display: none;
+    }    
+
+    .dbottom-container{
+        grid-area: Tbottom;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 40px 10px 20px 10px;
+        /* background-color: aqua; */
+        width: 100%;
+    }   
+
+    .drcont-dp{
+        display: none;
+    }
+
+    .drcont-body{
+        width: 100%;
+        height: fit-content;
+    }
+
+    .drcont-meter-cont{
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        height: fit-content;
+        flex-wrap: wrap;
+    }
 }

@@ -165,11 +165,11 @@
   padding: 10px 20px;
   font-size: 20px;
   font-weight: 500;
-  margin-top: 35px;
+  margin-top: 25px;
   color: White;
   background-color: #1565d8;
   border-radius: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   cursor: pointer;
 }
 
@@ -210,7 +210,7 @@
     display: flex;
   }
 
-  .c-left {
+  .c-left, .c-left-reg, .c-left-oth {
     width: calc(100% - 500px);
     height: 100%;
   }

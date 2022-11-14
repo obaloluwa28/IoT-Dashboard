@@ -4,20 +4,20 @@ import TogglebutOn from '../ToggleButtonOn/TogglebutOn'
 import '../Togglebut.css'
 
 const Togglebut = ({valState, itemkey, changeState}) => {
-  console.log(`key value 2: ${itemkey}`)
-  console.log(`Button State: ${valState}`)
+  // console.log(`key value 2: ${itemkey}`)
+  // console.log(`Button State: ${valState}`)
   const [toggleSwitch, setToggleSwitch] = useState()
 
   useEffect(() =>{
     ValueSatate()
-  })
+  }, [valState])
   
   const ValueSatate = () =>{
     setToggleSwitch(valState === "on" ? true : false )
   }
 
   const handleTogSwitchOn = () =>{
-    // setToggleSwitch(false)
+    setToggleSwitch(false)
     let obj = {
       state: 'off',
       keypair: itemkey
@@ -26,7 +26,7 @@ const Togglebut = ({valState, itemkey, changeState}) => {
   }
 
   const handleTogSwitchOff = () =>{
-    // setToggleSwitch(true)
+    setToggleSwitch(true)
     let obj = {
       state: 'on',
       keypair: itemkey

@@ -4,8 +4,15 @@
     align-items: center;
 }
 
+@media screen and (max-width:900px) {
+    #batt{
+        margin-top: 20px;
+    }
+}
+
 #batt span{
     font-size: 13px;
+    font-weight: 500;
 }
 
 #batt1{
@@ -22,6 +29,7 @@
 .batt1-lvl{
     position: absolute;
     bottom: 0;
+    height: 0px;
     width: 100%;
     display: flex;
     justify-content: center;

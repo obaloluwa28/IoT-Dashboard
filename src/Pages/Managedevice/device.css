@@ -3,9 +3,8 @@
     height: 100vh;
     background-color: rgb(252, 247, 247);
     overflow-y: auto;
-
-
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -13,4 +12,125 @@
 #pagetext{
     font-size: 18px;
     font-weight: 600;
+}
+
+#device-table-text{
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.new-device-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 65%;
+    min-width: 320px;
+    min-height: 500px;
+    /* background-color: white; */
+}
+
+.ndc-addnew, .ndc-viewdevices{
+    width: 100%;
+    display: flex;
+    background-color: #8888;
+    justify-content: space-between;
+    background-color: #2c0ca0;
+    padding: 10px 15px;
+    border-bottom: 1px solid white;
+    cursor: pointer;
+}
+
+.ndc-addnew > span, .ndc-viewdevices > span{
+    font-size: 15px;
+    font-weight: 600;
+    color: white;
+}
+
+#ndc-addnew-chevrondwn{
+    font-size: 18px;
+    color: white;
+}
+
+.ndc-addnew-container{
+    width: 100%;
+    min-height: 50vh;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    align-items: center;
+    padding: 10px;
+}
+
+#ndc-submit-class{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    position: relative;
+}
+
+#ndc-submit-class > input:first-child{
+    margin-top: 35px;
+}
+
+#ndc-device-name, #ndc-device-type, #ndc-device-submit{
+    /* min-width: 320px; */
+    width: 70%;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 8px 10px;
+    outline: none;
+    margin-bottom: 5px;
+    /* flex-grow: 1; */
+    border: 1px solid rgba(136, 136, 136, 0.199);
+}
+
+#ndc-device-type{
+    width: 100%;
+}
+
+#ndc-device-submit:hover{
+    background-color: #2c0ca0c0;
+}
+
+.bnw-dirname-container{
+    position: relative;
+    width: 70%;
+}
+
+#ndc-device-submit{
+    color: white;
+    background-color: #2c0ca048;
+    font-size: 16px;
+    font-weight: 600;
+    border: 1px solid rgba(136, 136, 136, 0.199);
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.bnw-region-drpdwn{
+    width: 100%;
+    padding: 0px 0px 10px 0px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    border: 0.1px solid rgba(0, 0, 0, 0.281);
+    max-height: 150px;
+    position: absolute;
+    z-index: 100;
+    top: 38px;
+    overflow-y: scroll;
+}
+
+.bnw-region-drpdwn > span{
+    width: 100%;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.bnw-region-drpdwn > span:hover{
+    background-color: rgba(0, 0, 0, 0.192);
 }

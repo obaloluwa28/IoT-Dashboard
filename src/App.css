@@ -10,6 +10,7 @@
 }
 
 .appcontainer{
+  position: relative;
   display: grid;
   grid-template-columns: auto 1fr;
   grid-template-areas: "side body";

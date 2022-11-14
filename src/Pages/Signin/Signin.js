@@ -4,6 +4,7 @@ import { AiOutlineEyeInvisible, AiOutlineEye} from "react-icons/ai";
 import axios from 'axios';
 import Loading from '../../Components/Loading/Loading'
 import { useNavigate } from "react-router-dom";
+import { useCookies } from 'react-cookie';
 
 const Signin = ({setsiginState}) => {
   const [isSignUp, setIsSignUp] = useState("1")
@@ -17,10 +18,14 @@ const Signin = ({setsiginState}) => {
   const [notloading, setNotloading] = useState(false)
   const [loadingstate, setLoadingstate] = useState("")
   const [serveresp, setServeresp] = useState("")
+  const navigate = useNavigate()
+  const [cookies, setCookie] = useCookies(['Token']);
+  const API = 'http://localhost:5000'
 
   useEffect(() => {
     setsiginState()
-})
+    // setCookie('refreshToken', "undefined", { path: '/'});
+  })
 
   const ToggleSign = () =>{
     setIsSignUp("2")
@@ -61,64 +66,70 @@ const Signin = ({setsiginState}) => {
     }
   }
 
-  const navigate = useNavigate()
-
-  const handleSubmit = (e) =>{
+  const handleSubmit = async (e) =>{
     e.preventDefault();
     if (isSignUp === "1"){
       setNotloading(true)
       setLoadingstate("login")
       let Sobj = {
-          Username: username,
-          Password: password
+        email: username,
+        password: password
       }
       console.log(Sobj)
-      axios.post(`http://localhost:5000/login`, Sobj).then((response) => {
-        // axios.post(`https://sterling-smart-meter-backend.herokuapp.com/login`, obj).then((response) => {
-          if(response.status === 200){
-              console.log(response.data.message);
-              if(response.data.message === "true"){
+      try{
+        await axios.post(`${API}/login`, Sobj).then((response) => {
+            console.log(response.data);
+            if(response.data.status === 201){
                 navigate ('/dashboard')
               }
-              else{
-                console.log("Incorrect Username or Password")
-                   setServeresp("error")
-              }
+            else{
+              console.log('error')
             }
-          else{
-            console.log('error')
-          }
-      });
+        });
+      } catch(e){
+        setServeresp("error")
+        if(e.message.includes('404')){
+          console.log(e.message)
+          setLoadingstate("Email not match!")
+        } else if(e.message.includes('400')){
+          console.log(e.message)
+          setLoadingstate("Password Incorrect")
+        } else if(e.code === 'ERR_NETWORK'){
+          setLoadingstate("Internet Connection Down")
+        }
+      }
+      
     } else if(isSignUp === "2"){
       setNotloading(true)
       setLoadingstate("register")
       let Robj = {
-        Firstname: firstname,
-        Username: username,
-        Password: password,
-        ConfPass: conPassword
+        name: firstname,
+        email: username,
+        password: password,
+        confPassword: conPassword
       }
       console.log(Robj)
-      setNotloading(false)
-      setIsSignUp("3")
-      // axios.post(`http://localhost:5000/register`, Robj).then((response) => {
-      //   // axios.post(`https://sterling-smart-meter-backend.herokuapp.com/login`, obj).then((response) => {
-      //     if(response.status === 200){
-      //         console.log(response.data.message);
-      //         if(response.data.message === "true"){
-      //         //   navigate ('/dashboard')
-      //            setNotloading(false)
-      //            setIsSignUp("3")
-      //         }
-      //         else{
-      //           console.log("Incorrect Username or Password")
-      //           setServeresp("error")
-      //         }
-      //       }
-      //     else{
-      //       console.log('error')
-      //     }
-      // });
+      try{
+        await axios.post(`${API}/users`, Robj).then((response) => {
+          console.log(response.data)
+            if(response.data.status === 201){
+                console.log(response.data.msg);
+                setNotloading(false)
+                setIsSignUp("3")
+            }
+            else{
+              console.log('error')
+            }
+        });
+      } catch(e){
+        setServeresp("error")
+        if(e.message.includes('404')){
+          console.log(e.message)
+          setLoadingstate("Server Unreachable")
+        } else if(e.code === 'ERR_NETWORK'){
+          setLoadingstate("Internet Connection Down")
+        }
+      }
     } else{
       setNotloading(true)
       let Aobj = {
@@ -127,7 +138,7 @@ const Signin = ({setsiginState}) => {
       console.log(Aobj)
       setNotloading(false)
       setIsSignUp("4")
-      // axios.post(`http://localhost:5000/register`, Aobj).then((response) => {
+      // axios.post(`${API}/authkey`, Aobj).then((response) => {
       //   // axios.post(`https://sterling-smart-meter-backend.herokuapp.com/login`, Aobj).then((response) => {
       //     if(response.status === 200){
       //         console.log(response.data.message);
@@ -163,12 +174,6 @@ const Signin = ({setsiginState}) => {
         <form className="form" onSubmit={handleSubmit}>
             <span>Smart Homes!</span>
             <span className='motto'>If it uses Power, it can be Controlled! </span>
-            {/* <div className="social-icons">
-                <span id="img-box"><img src={Google} alt="website url"/></span>
-                <span id="img-box"><img src={Twitter} alt="twitter url"/></span>
-                <span id="img-box"><img src={Linkedln} alt="linkedlne url"/></span>
-                <span id="img-box"><img src={Facebook} alt="facebook url"/></span>
-            </div> */}
             <div className="horizontal-rule"><hr id="rule" /><span>or</span><hr id="rule" /></div>
             <div className="label-container">
                 <span>Your Email</span>
@@ -183,7 +188,7 @@ const Signin = ({setsiginState}) => {
 
             <input type="submit" className="inputButtn" text="Sign In" />
             <span>Don't have an account? <span onClick={ToggleSign} id="toggle">Signup Now!</span></span>
-            {notloading && <Loading loadingstatus={loadingstate} loadingresp={serveresp} changeErrorDisp={toggleErrorComp}/> }
+            {notloading && <Loading loadingstatus={loadingstate} loadingresp={serveresp} changeErrorDisp={toggleErrorComp} text="Loading Dashboard ..."/> }
         </form>
       </div> : isSignUp === "2" ?
       <div className="c-right">
@@ -212,7 +217,7 @@ const Signin = ({setsiginState}) => {
 
               <input type="submit" className="inputButtn" text="Sign Up" />
               <span>Already have an account? <span onClick={ToggleReg} id="toggle">SignIn Now!</span></span>
-              {notloading && <Loading loadingstatus={loadingstate} loadingresp={serveresp}/> }
+              {notloading && <Loading loadingstatus={loadingstate} loadingresp={serveresp} changeErrorDisp={toggleErrorComp} text="Registering User ..."/> }
         </form>
       </div> : isSignUp === "3" ? 
       <div className="c-right">

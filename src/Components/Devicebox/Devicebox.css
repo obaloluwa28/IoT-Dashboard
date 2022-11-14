@@ -1,4 +1,4 @@
-.col1{
+.col1, .col1-add-container{
     padding: 15px;
     border-radius: 20px;
     background-color: white;
@@ -9,6 +9,13 @@
     align-items: center;
     box-shadow: 0 3px 10px rgba(141, 140, 140, 0.1);
     position: relative;
+}
+
+.col1-add-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
 }
 
 #device-title{
@@ -55,4 +62,12 @@
 .sub-box-contain{
     width: 100%;
     height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#add-new-plus{
+    font-size: 30px;
+    color: rgba(0, 0, 0, 0.048);
 }

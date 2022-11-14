@@ -16,14 +16,26 @@
     justify-content: center;
     align-items: center;
     border-radius: 20px;
-    font-size: 25px;
-    font-weight: 500;
+    font-size: 22px;
+    font-weight: 600;
     box-shadow: 0 3px 10px rgba(141, 140, 140, 0.1);
     cursor: pointer;
 }
 
 #meterbox-title{
-    font-size: 18px;
-    font-weight: 600;
+    font-size: 15px;
+    font-weight: 500;
     margin-top: 5px;
+}
+
+@media screen and (max-width: 1200px) {
+    .meterbox-container{
+        height: fit-content;
+        min-width: 150px;
+        max-width: 340px;
+    }
+
+    .meterbox-body{
+        height: 150px;
+    }
 }
