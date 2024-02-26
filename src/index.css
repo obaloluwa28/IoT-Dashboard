@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.Toastify__toast--error {
+    border: 1px solid #EB5757;
+    border-radius: 5px !important;
+    background: #FAE1E2 !important;
+}
+
+.Toastify__toast--error::after {
+  position: absolute;
+  color: #333333;
+  font-size: 13px;
+  font-weight: 700;
+  left:265px;
+  padding-top: 14px !important;
+}
+
+.Toastify__toast--error::before {
+  position:relative; 
+  z-index:100000;
+  left:12px;
+  top:6px;
+}
+
+.Toastify__toast--success {
+  border: 1px solid #3A9EA5 !important;
+  border-radius: 5px !important;
+  background: #F0F9FA !important;
+}
+
+.Toastify__toast--success::before {
+  position:relative; 
+  z-index:100000;
+  left:12px;
+  top:6px;
+}
+
+.Toastify__toast--success::after {
+  position: absolute;
+  color: #333333;
+  font-size: 13px;
+  font-weight: 700;
+  left:265px;
+  padding-top: 14px !important;
+}
+
+.Toastify__toast--warning {
+  border: 1px solid red  !important;
+  border-radius: 5px !important;
+  background: #FADFC5 !important;
+}
+
+.Toastify__toast--warning::before {
+  position:relative; 
+  z-index:100000;
+  left:12px;
+  top:6px;
+}  
+
+.Toastify__toast--warning::after {
+  position: absolute;
+  color: #E78326;
+  font-size: 13px;
+  font-weight: 700;
+  left:265px;
+  padding-top: 14px !important;
+}
+
+.Toastify__toast-body {
+  color: #444C63    ;
+  font-size: 13px;
+  padding-left: 20px;
+  line-height: 20px;
+  padding: 0px;
+  padding-top: 25px;
+  width: 100%;
+  font-weight: 400;
+  margin-left: 25px !important;
+} 
+
+.Toastify__toast > button>  svg {
+    display: none;
+}
+
+.background_color{
+  background-color: rgba(0, 255, 255, 0.090);
+}
+
+.background_color_1{
+  background-color: rgba(255, 192, 203, 0.090)
+}
+
+.background_color_2{
+  background-color: rgba(255, 255, 0, 0.090);
+}
+
+.background_color_3{
+  background-color: rgba(255, 0, 234, 0.090);
+}
+
+.overlaybackground{
+  background-color: rgba(0, 0, 0, 0.411);
+}
